@@ -7,8 +7,7 @@
 }
 
 body {
-    background: url(/toppings-de-pizza/img/fondo_pizza.jpg) no-repeat, center;
-    background-size: cover;
+    background: url(/toppings-de-pizza/img/fondo_pizza.jpg) no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
