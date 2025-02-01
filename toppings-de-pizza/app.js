@@ -176,3 +176,57 @@ console.log(listaDeToppings.nextElementSibling.textContent); // accedemos al sig
 
 // podemos acceder al hermano anterior de un elemento con la propiedad .previousElementSibling
 console.log(listaDeToppings.previousElementSibling.textContent); // accedemos al hermano anterior de la lista de toppings
+
+
+
+// EVENTOS del MOUSE : 'CLICK'
+
+// Podemos escuchar eventos del mouse en el DOM y ejecutar una función cuando sucedan
+// Algunos eventos del mouse son: click, mouseover, mouseout, etc.
+
+// Ejemplo:
+
+//creamos la variable para llamar el elemento que vamos a escuchar
+const cebolla = document.getElementById('cebolla');
+
+// creamos la función que se ejecutará cuando hagamos click sobre el elemento
+function mostrarclick(e) {
+    console.log(e.target.innerText); // mostramos el texto del elemento sobre el que hicimos click
+};
+
+cebolla.addEventListener('click', mostrarclick); // escuchamos el evento 'click' y ejecutamos la función 'mostrarclick'
+
+
+// podemos acceder a varios elementos con la misma clase y agregarles un evento
+
+const toppingstodos = document.getElementsByClassName
+('topping'); // seleccionamos todos los elementos con la clase 'topping'
+
+// utilizaremos la misma función del ejemplo anterior
+
+//creamos un ciclo para recorrer todos los elementos con la clase 'topping'
+
+for (const topping of toppingstodos) {
+    topping.addEventListener('click', mostrarclick); // escuchamos el evento 'click' y ejecutamos la función 'mostrarclick'
+};
+
+
+// EVENTOS del MOUSE : 'MOUSEOVER'
+// podemos escuchar el evento 'mouseover' en el DOM y ejecutar una función cuando suceda
+// el evento 'mouseover' se dispara cuando el mouse pasa por encima de un elemento del DOM 
+// Ejemplo:
+
+//creamos la variable para llamar el elemento que vamos a escuchar
+const misToppings = document.getElementsByClassName('topping');
+
+function mouseOver(e) {
+    console.log(`El mouse está sobre el elemento ${e.target.innerText}`); // mostramos el texto del elemento sobre el que pasamos el mouse
+};
+
+//misToppings.addEventListener('mouseover', mouseOver); // escuchamos el evento 'mouseover' y ejecutamos la función 'mouseOver'
+
+// podemos acceder a varios elementos con la misma clase y agregarles un evento
+
+for(const misToppings of toppingstodos) {
+    misToppings.addEventListener('mouseover', mouseOver); // escuchamos el evento 'mouseover' y ejecutamos la función 'mostrarclick'
+};
